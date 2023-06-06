@@ -6,42 +6,84 @@
 #include <conio.h>
 
 using namespace std;
-int currentVC{};
+int i{};
+int n{};
+int	currentVC{};
+int salary{};
 int currentSal{};
-int neededVC{};
+int neededVC{ 175000 };
 int remainingVC = neededVC - currentVC;
-const int remainingGames{};
-
+//int games = (neededVC - currentVC) / currentSal;
 
 int main()
 {
+	system("cls");
+	cout << "YOUR GOAL IS " << neededVC << "VC" << endl << endl;
 	cout << "How much VC you have as of now?" << endl <<
 			"Answer: ";
 	cin >> currentVC;
-	cout << "How much is your NBA Current Salary per game? (Basic Pay w/o incentives)" << endl <<
+	//cout << "How much is your NBA Current Salary per game? (Basic Pay w/o incentives)" << endl <<
+	//		"Answer: ";
+	//cin >> currentSal;
+	cout << "How many games you want to play? " << endl <<
 			"Answer: ";
-	cin >> currentSal;
-	cout << "How much is your VC goal? " << endl <<
-			"Answer: ";
-	cin >> neededVC;
+	cin >> n;
+	for (i = 0; i < n; i++)
+	{
+		cout << "Enter your salary after the game for the next " << n << " games." << endl;
+		cin >> salary;
+		currentVC = currentVC + salary;
+		cout << "Your Current VC: " << currentVC << endl;
+		cout << "VC Needed: " << neededVC - currentVC << endl <<
+				"Games remaning: " << (neededVC - currentVC) / salary << endl;
+	}
+	if (i >= n) {
+			system("cls");
+			cout << "Your Current VC: " << currentVC << endl;
+			cout << "VC Needed: " << neededVC - currentVC << endl <<
+					"Games remaning: " << (neededVC - currentVC) / salary << endl;
+			cout << "You have finished " << n << " games you entered. Do you want to continue? " << endl <<
+					"1 for yes 2 for N: ";
+					int proceed;
+					cin >> proceed;
+					if (proceed == 1) {
+						return main();
+					}
+					else if (proceed = 2) {
+						return 0;
+					}
+					else {
+						cout << "You have entered invalid keyword! Application will close!";
+						return 0;
+					}
+	}
+	/*
+	cin.get();
+	do {
+		system("cls");
+		cout << "VC Needed: " << neededVC - currentVC << endl <<
+				"Games remaning: " << (neededVC - currentVC) / currentSal << endl;
+	} while (cin.get() == '\n');*/
 	//next line
-	cout << "You still need " << neededVC - currentVC << "VC more to complete your " << neededVC << "VC goal." << endl <<
-			"That is approximately " << (neededVC - currentVC) / currentSal << " games left" << endl;
+	//cout << "You still need " << neededVC - currentVC << "VC more to complete your " << neededVC << "VC goal." << endl <<
+	//		"That is approximately " << (neededVC - currentVC) / currentSal << " games left" << endl;
 			
 		/*if (cin.get() == (VK_CONTROL)) {
 			cout << "Key Pressed";
 			//cout << "You still need " << neededVC - currentVC;
 		}*/
-			cout << "VC Need: " << neededVC - currentVC << endl <<
-			"Games: " << (neededVC - currentVC) / currentSal << endl <<
-			"Press enter if you already got your next salary to update.";
-			do {
-				
-			} while (cin.get() == '\n');
+		/*
+		 currentVC + currentSal;
+		(neededVC - currentVC) / currentSal;
+		cout << "VC Need: " << neededVC - currentVC << endl <<
+		"Games: " << (neededVC - currentVC) / currentSal << endl <<
+		"Press enter if you already got your next salary to update.";
+		cin.get();
+		*/
 
-
-		return 0;
 }
+
+
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
 // Debug program: F5 or Debug > Start Debugging menu
