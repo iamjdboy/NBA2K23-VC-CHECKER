@@ -5,6 +5,7 @@
 #include <windows.h>
 #include <conio.h>
 
+
 using namespace std;
 int i{};
 int n{};
@@ -28,8 +29,10 @@ int main()
 	cout << "How many games you want to play? " << endl <<
 			"Answer: ";
 	cin >> n;
+	system("cls");
 	for (i = 0; i < n; i++)
 	{
+		cout << "You're currently in " << i << "/" << n << " games." << endl;
 		cout << "Enter your salary after the game for the next " << n << " games." << endl;
 		cin >> salary;
 		currentVC = currentVC + salary;
