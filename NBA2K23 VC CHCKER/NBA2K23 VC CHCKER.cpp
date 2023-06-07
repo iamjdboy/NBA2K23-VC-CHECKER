@@ -43,8 +43,8 @@ int main()
 		cin >> salary;
 		currentVC = currentVC + salary;
 		cout << "Your Current VC: " << currentVC << endl;
-		cout << "VC Needed: " << neededVC - currentVC << endl <<
-				"Games remaning: " << (neededVC - currentVC) / salary << endl;
+		cout << "VC Needed: " << neededVC - currentVC << endl;
+				//"Games remaning: " << (neededVC - currentVC) / salary << endl;
 	}
 	if (i >= n) {
 			system("cls");
