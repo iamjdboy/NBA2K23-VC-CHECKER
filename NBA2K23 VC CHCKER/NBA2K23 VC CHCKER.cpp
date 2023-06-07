@@ -33,7 +33,13 @@ int main()
 	for (i = 0; i < n; i++)
 	{
 		cout << "You're currently in " << i << "/" << n << " games." << endl;
-		cout << "Enter your salary after the game for the next " << n << " games." << endl;
+		cout << "Enter your salary earned after the game for the next ";
+		if (i == 0) {
+			cout << n << " games." << endl;
+		}
+		else if(i > 0){
+			cout << n - i << " games." << endl;
+		};
 		cin >> salary;
 		currentVC = currentVC + salary;
 		cout << "Your Current VC: " << currentVC << endl;
