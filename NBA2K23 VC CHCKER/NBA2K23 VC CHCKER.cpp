@@ -13,20 +13,21 @@ int	currentVC{};
 int salary{};
 int currentSal{};
 int neededVC{ 175000 };
+//int gamesperseason{ 82 };
 int remainingVC = neededVC - currentVC;
 //int games = (neededVC - currentVC) / currentSal;
 
 int main()
 {
 	system("cls");
-	cout << "v1.5 @iamjdboy" << endl;
+	cout << "v1.6 @iamjdboy" << endl;
 	cout << "YOUR GOAL IS " << neededVC << "VC" << endl << endl;
 	cout << "How much VC you have as of now?" << endl <<
 			"Answer: ";
 	cin >> currentVC;
-	//cout << "How much is your NBA Current Salary per game? (Basic Pay w/o incentives)" << endl <<
-	//		"Answer: ";
-	//cin >> currentSal;
+	cout << "How much is your NBA Current Salary per game? (Basic Pay w/o incentives)" << endl <<
+			"Answer: ";
+	cin >> salary;
 	cout << "How many games you want to play? " << endl <<
 			"Answer: ";
 	cin >> n;
@@ -37,21 +38,22 @@ int main()
 		cout << "Enter your salary earned after the game for the next ";
 		if (i == 0) {
 			cout << n << " games." << endl;
+			neededVC - currentVC;
 		}
 		else if(i > 0){
 			cout << n - i << " games." << endl;
 		};
 		cin >> salary;
 		currentVC = currentVC + salary;
-		cout << "Your Current VC: " << currentVC << endl;
-		cout << "VC Needed: " << neededVC - currentVC << endl;
-				//"Games remaning: " << (neededVC - currentVC) / salary << endl;
+		cout << "Your Current VC: " << currentVC << endl <<
+				"VC Needed: " << neededVC - currentVC << endl <<
+				"Games remaning: " << (neededVC - currentVC) / salary << endl;
 	}
 	if (i >= n) {
 			system("cls");
-			cout << "Your Current VC: " << currentVC << endl;
-			cout << "VC Needed: " << neededVC - currentVC << endl <<
-					"Games remaning: " << (neededVC - currentVC) / salary << endl;
+			cout << "Your Current VC: " << currentVC << endl <<
+					"VC Needed: " << neededVC - currentVC << endl;
+					//"Games remaning: " << (neededVC - currentVC) / salary << endl;
 			cout << "You have finished " << n << " games you entered. Do you want to continue? " << endl <<
 					"1 for yes 2 for N: ";
 					int proceed;
@@ -59,7 +61,7 @@ int main()
 					if (proceed == 1) {
 						return main();
 					}
-					else if (proceed = 2) {
+					else if (proceed == 2) {
 						return 0;
 					}
 					else {
@@ -67,7 +69,7 @@ int main()
 						return 0;
 					}
 	}
-	else if (currentVC <= neededVC) {
+	else if (currentVC >= neededVC) {
 		cout << "You've reached your goal!";
 		return 0;
 	}
