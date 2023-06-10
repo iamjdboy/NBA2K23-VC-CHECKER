@@ -19,6 +19,7 @@ int remainingVC = neededVC - currentVC;
 int main()
 {
 	system("cls");
+	cout << "v1.5 @iamjdboy" << endl;
 	cout << "YOUR GOAL IS " << neededVC << "VC" << endl << endl;
 	cout << "How much VC you have as of now?" << endl <<
 			"Answer: ";
@@ -65,6 +66,10 @@ int main()
 						cout << "You have entered invalid keyword! Application will close!";
 						return 0;
 					}
+	}
+	else if (currentVC <= neededVC) {
+		cout << "You've reached your goal!";
+		return 0;
 	}
 	/*
 	cin.get();
