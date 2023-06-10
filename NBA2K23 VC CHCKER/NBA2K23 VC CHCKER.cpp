@@ -35,25 +35,33 @@ int main()
 	for (i = 0; i < n; i++)
 	{
 		cout << "You're currently in " << i << "/" << n << " games." << endl;
-		cout << "Enter your salary earned after the game for the next ";
+		cout << "press ENTER for the next ";
 		if (i == 0) {
-			cout << n << " games." << endl;
+			cout << n << " games if you already received your salary." << endl;
 			neededVC - currentVC;
 		}
 		else if(i > 0){
-			cout << n - i << " games." << endl;
+			cout << n - i << " games if you already received your salary." << endl;
 		};
-		cin >> salary;
-		currentVC = currentVC + salary;
-		cout << "Your Current VC: " << currentVC << endl <<
+		cin.get();
+		if (cin.get() == '\n') {
+			currentVC = currentVC + salary;
+			cout << "Your Current VC: " << currentVC << endl <<
 				"VC Needed: " << neededVC - currentVC << endl <<
-				"Games remaning: " << (neededVC - currentVC) / salary << endl;
+				"Games remaning: " << (neededVC - currentVC) / salary << "VC (if it is consistent " << salary << "VC per game)." << endl << endl << endl;
+		}
+		else {
+			//cout << "You didn't press ENTER. Application will RESTART!";
+			return main();
+		}
+		
 	}
 	if (i >= n) {
 			system("cls");
 			cout << "Your Current VC: " << currentVC << endl <<
-					"VC Needed: " << neededVC - currentVC << endl;
+					"VC Needed: " << neededVC - currentVC << endl <<
 					//"Games remaning: " << (neededVC - currentVC) / salary << endl;
+					"Games remaning: " << (neededVC - currentVC) / salary << "VC (if it is consistent " << salary << "VC per game." << endl << endl << endl;
 			cout << "You have finished " << n << " games you entered. Do you want to continue? " << endl <<
 					"1 for yes 2 for N: ";
 					int proceed;
