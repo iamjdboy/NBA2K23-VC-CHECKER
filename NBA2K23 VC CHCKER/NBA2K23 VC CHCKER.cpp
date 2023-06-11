@@ -48,7 +48,7 @@ int main()
 			currentVC = currentVC + salary;
 			cout << "Your Current VC: " << currentVC << endl <<
 				"VC Needed: " << neededVC - currentVC << endl <<
-				"Games remaning: " << (neededVC - currentVC) / salary << "games. (if it is consistent " << salary << "VC per game)." << endl << endl << endl;
+				"Games remaning: " << (neededVC - currentVC) / salary << " games. (if it is consistent " << salary << "VC per game)." << endl << endl << endl;
 		}
 		else {
 			//cout << "You didn't press ENTER. Application will RESTART!";
@@ -61,7 +61,7 @@ int main()
 			cout << "Your Current VC: " << currentVC << endl <<
 					"VC Needed: " << neededVC - currentVC << endl <<
 					//"Games remaning: " << (neededVC - currentVC) / salary << endl;
-					"Games remaning: " << (neededVC - currentVC) / salary << "VC (if it is consistent " << salary << "VC per game." << endl << endl << endl;
+					"Games remaning: " << (neededVC - currentVC) / salary << " games. (if it is consistent " << salary << "VC per game." << endl << endl << endl;
 			cout << "You have finished " << n << " games you entered. Do you want to continue? " << endl <<
 					"1 for yes 2 for N: ";
 					int proceed;
