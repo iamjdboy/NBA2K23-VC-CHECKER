@@ -20,7 +20,7 @@ int remainingVC = neededVC - currentVC;
 int main()
 {
 	system("cls");
-	cout << "v1.6 @iamjdboy" << endl;
+	cout << "v1.7 @iamjdboy" << endl;
 	cout << "YOUR GOAL IS " << neededVC << "VC" << endl << endl;
 	cout << "How much VC you have as of now?" << endl <<
 			"Answer: ";
@@ -48,7 +48,7 @@ int main()
 			currentVC = currentVC + salary;
 			cout << "Your Current VC: " << currentVC << endl <<
 				"VC Needed: " << neededVC - currentVC << endl <<
-				"Games remaning: " << (neededVC - currentVC) / salary << "VC (if it is consistent " << salary << "VC per game)." << endl << endl << endl;
+				"Games remaning: " << (neededVC - currentVC) / salary << "games. (if it is consistent " << salary << "VC per game)." << endl << endl << endl;
 		}
 		else {
 			//cout << "You didn't press ENTER. Application will RESTART!";
